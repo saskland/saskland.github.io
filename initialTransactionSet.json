@@ -1,0 +1,67 @@
+[{
+	"num": 0,
+	"cellsArray": ["LEGAL", "RM", "SOIL", "SCODE", "ACRES", "PRICE", "PER/ACRE", "ASSVAL", "DATE", "VENDOR", "PURCHASER"]
+}, {
+	"num": 1,
+	"cellsArray": ["SW-22-50-03-W3", "493", "E", "Arms", "159.32", "336000", "2109", "115700", "2016-02-10", "Robert & Helen Kasner", "R. KASNER TRUCKING LTD."]
+}, {
+	"num": 2,
+	"cellsArray": ["SE-07-50-02-W3", "493", "F", "Arms", "159.39", "270000", "1694", "103400", "2016-03-18", "Lorne & Patty Miller", "TMK TRUCKING LTD."]
+}, {
+	"num": 3,
+	"cellsArray": ["SE-08-51-02-W3", "493", "E", "Arms", "147.73", "215000", "1455", "106400", "2016-04-12", "GERALD & YVONNE ERNST", "RSP FARMS LTD."]
+}, {
+	"num": 4,
+	"cellsArray": ["SW-07-51-02-W3", "493", "E", "Arms", "160.81", "212500", "1321", "96600", "2016-02-09", "Harley & Linda & Blaine Henry", "James & Lorraine Henderson"]
+}, {
+	"num": 5,
+	"cellsArray": ["SE-29-51-01-W3", "493", "D", "Arms", "132.86", "210000", "1581", "227900", "2016-01-21", "Henry & Karen Gale", "Vince Amyotte"]
+}, {
+	"num": 6,
+	"cellsArray": ["NE-09-52-02-W3", "493", "G", "Arms", "159.59", "150000", "940", "77800", "2016-01-21", "Adeline Strube", "Dean & Shannon Curran"]
+}, {
+	"num": 7,
+	"cellsArray": ["NW-09-52-02-W3", "493", "G", "Arms", "159.44", "150000", "941", "81900", "2016-01-21", "Adeline Strube", "Dean & Shannon Curran"]
+}, {
+	"num": 8,
+	"cellsArray": ["SE-31-50-01-W3", "493", "*", "Arms", "140.68", "150000", "1066", "16000", "2016-01-20", "Junior Holdings Ltd.", "B & B CONSTRUCTION GROUP INC."]
+}, {
+	"num": 9,
+	"cellsArray": ["SE-31-50-01-W3", "493", "*", "Arms", "140.68", "150000", "1066", "16000", "2016-01-20", "RUSON HOLDINGS LTD.", "B & B CONSTRUCTION GROUP INC."]
+}, {
+	"num": 10,
+	"cellsArray": ["SE-34-52-03-W3", "493", "K", "Arms", "159.58", "146300", "917", "60300", "2016-03-31", "Sigurd Skarsgard", "Levi Schuttle"]
+}, {
+	"num": 11,
+	"cellsArray": ["SW-28-52-03-W3", "493", "H", "Arms", "158.23", "131575", "832", "80600", "2016-03-31", "Sigurd Skarsgard", "Leslie & Diana Schutte"]
+}, {
+	"num": 12,
+	"cellsArray": ["SW-19-52-02-W3", "493", "H", "Arms", "159.76", "130000", "814", "74900", "2016-01-20", "Deborah Schmalz", "Allan & Sally Fitch"]
+}, {
+	"num": 13,
+	"cellsArray": ["NW-28-52-03-W3", "493", "H", "Arms", "159.54", "119000", "746", "68200", "2016-03-31", "Sigurd Skarsgard", "Leslie & Diana Schutte"]
+}, {
+	"num": 14,
+	"cellsArray": ["SW-35-52-03-W3", "493", "J", "Arms", "159.22", "112300", "705", "70900", "2016-03-31", "Sigurd Skarsgard", "Levi Schuttle"]
+}, {
+	"num": 15,
+	"cellsArray": ["SE-25-50-02-W3", "493", "H", "Arms", "157.39", "92500", "588", "65700", "2016-05-04", "Nisse Nostbakken et al", "GARY & CATHERINE GALE"]
+}, {
+	"num": 16,
+	"cellsArray": ["NE-03-48-03-W3", "493", "M", "Arms", "159.36", "75000", "471", "29000", "2016-01-05", "Leander Schmalz", "Grant Thiel"]
+}, {
+	"num": 17,
+	"cellsArray": ["SE-10-48-03-W3", "493", "M", "Arms", "161.12", "75000", "465", "27400", "2016-01-05", "Leander Schmalz", "Grant Thiel"]
+}, {
+	"num": 18,
+	"cellsArray": ["SW-10-48-03-W3", "493", "M", "Arms", "161.27", "75000", "465", "29300", "2016-01-05", "Leander Schmalz", "Grant Thiel"]
+}, {
+	"num": 19,
+	"cellsArray": ["NE-10-48-03-W3", "493", "M", "Arms", "161.11", "75000", "466", "26000", "2016-01-05", "Leander Schmalz", "Grant Thiel"]
+}, {
+	"num": 20,
+	"cellsArray": ["NW-26-52-03-W3", "493", "K", "Arms", "158.58", "61200", "386", "46100", "2016-03-31", "Sigurd Skarsgard", "Levi Schuttle"]
+}, {
+	"num": 21,
+	"cellsArray": ["NW-27-49-03-W3", "493", "K", "Arms", "35.17", "5000", "142", "", "2016-04-25", "Donna Latham", "Lorien Brown et al"]
+}]
