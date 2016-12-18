@@ -16040,7 +16040,7 @@
         return {
           transactionTitle: "Recent Transactions",
           transactions: [],
-          loading: false,
+          loading: true,
           showDetails: false
         };
       }
@@ -16087,7 +16087,6 @@
       _this.transactionsService = new _TransactionsSearchService2.default();
   
       //if (!props.transactions || props.transactions.legth < 1) {
-      _this.setState({ loading: true });
       _this.transactionsService.getMostRecentTransactions(25, _this.repositoryCallback);
       //}
       return _this;
