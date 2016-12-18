@@ -16665,11 +16665,6 @@
       value: function componentDidMount() {
         document.title = _index.title;
       }
-    }, {
-      key: 'serviceCallback',
-      value: function serviceCallback(transactions) {
-        this.setState({ transactions: transactions });
-      }
     }]);
   
     function HomePage(props) {
@@ -16683,7 +16678,7 @@
         return _react2.default.createElement(
           _Layout2.default,
           { className: _styles2.default.content },
-          _react2.default.createElement(_Transactions2.default, { transactions: this.props.transactions }),
+          _react2.default.createElement(_Transactions2.default, null),
           _react2.default.createElement(
             'p',
             null,
