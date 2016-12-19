@@ -1,67 +1,301 @@
 [{
-	"num": 0,
-	"cellsArray": ["LEGAL", "RM", "SOIL", "SCODE", "ACRES", "PRICE", "PER/ACRE", "ASSVAL", "DATE", "VENDOR", "PURCHASER"]
+	"id": "1400",
+	"landLocation": "SE-25-50-02-W3",
+	"rm": "493",
+	"soil": "H",
+	"acres": "157.39",
+	"price": "92500",
+	"perAcre": "588",
+	"assessedValue": "65700",
+	"date": "2016-05-04",
+	"seller": "Nisse Nostbakken et al",
+	"buyer": "GARY & CATHERINE GALE"
 }, {
-	"num": 1,
-	"cellsArray": ["SW-22-50-03-W3", "493", "E", "Arms", "159.32", "336000", "2109", "115700", "2016-02-10", "Robert & Helen Kasner", "R. KASNER TRUCKING LTD."]
+	"id": "1399",
+	"landLocation": "NW-27-49-03-W3",
+	"rm": "493",
+	"soil": "K",
+	"acres": "35.17",
+	"price": "5000",
+	"perAcre": "142",
+	"assessedValue": "",
+	"date": "2016-04-25",
+	"seller": "Donna Latham",
+	"buyer": "Lorien Brown et al"
 }, {
-	"num": 2,
-	"cellsArray": ["SE-07-50-02-W3", "493", "F", "Arms", "159.39", "270000", "1694", "103400", "2016-03-18", "Lorne & Patty Miller", "TMK TRUCKING LTD."]
+	"id": "1398",
+	"landLocation": "SE-08-51-02-W3",
+	"rm": "493",
+	"soil": "E",
+	"acres": "147.73",
+	"price": "215000",
+	"perAcre": "1455",
+	"assessedValue": "106400",
+	"date": "2016-04-12",
+	"seller": "GERALD & YVONNE ERNST",
+	"buyer": "RSP FARMS LTD."
 }, {
-	"num": 3,
-	"cellsArray": ["SE-08-51-02-W3", "493", "E", "Arms", "147.73", "215000", "1455", "106400", "2016-04-12", "GERALD & YVONNE ERNST", "RSP FARMS LTD."]
+	"id": "1393",
+	"landLocation": "NW-28-52-03-W3",
+	"rm": "493",
+	"soil": "H",
+	"acres": "159.54",
+	"price": "119000",
+	"perAcre": "746",
+	"assessedValue": "68200",
+	"date": "2016-03-31",
+	"seller": "Sigurd Skarsgard",
+	"buyer": "Leslie & Diana Schutte"
 }, {
-	"num": 4,
-	"cellsArray": ["SW-07-51-02-W3", "493", "E", "Arms", "160.81", "212500", "1321", "96600", "2016-02-09", "Harley & Linda & Blaine Henry", "James & Lorraine Henderson"]
+	"id": "1394",
+	"landLocation": "SW-28-52-03-W3",
+	"rm": "493",
+	"soil": "H",
+	"acres": "158.23",
+	"price": "131575",
+	"perAcre": "832",
+	"assessedValue": "80600",
+	"date": "2016-03-31",
+	"seller": "Sigurd Skarsgard",
+	"buyer": "Leslie & Diana Schutte"
 }, {
-	"num": 5,
-	"cellsArray": ["SE-29-51-01-W3", "493", "D", "Arms", "132.86", "210000", "1581", "227900", "2016-01-21", "Henry & Karen Gale", "Vince Amyotte"]
+	"id": "1395",
+	"landLocation": "SE-34-52-03-W3",
+	"rm": "493",
+	"soil": "K",
+	"acres": "159.58",
+	"price": "146300",
+	"perAcre": "917",
+	"assessedValue": "60300",
+	"date": "2016-03-31",
+	"seller": "Sigurd Skarsgard",
+	"buyer": "Levi Schuttle"
 }, {
-	"num": 6,
-	"cellsArray": ["NE-09-52-02-W3", "493", "G", "Arms", "159.59", "150000", "940", "77800", "2016-01-21", "Adeline Strube", "Dean & Shannon Curran"]
+	"id": "1396",
+	"landLocation": "NW-26-52-03-W3",
+	"rm": "493",
+	"soil": "K",
+	"acres": "158.58",
+	"price": "61200",
+	"perAcre": "386",
+	"assessedValue": "46100",
+	"date": "2016-03-31",
+	"seller": "Sigurd Skarsgard",
+	"buyer": "Levi Schuttle"
 }, {
-	"num": 7,
-	"cellsArray": ["NW-09-52-02-W3", "493", "G", "Arms", "159.44", "150000", "941", "81900", "2016-01-21", "Adeline Strube", "Dean & Shannon Curran"]
+	"id": "1397",
+	"landLocation": "SW-35-52-03-W3",
+	"rm": "493",
+	"soil": "J",
+	"acres": "159.22",
+	"price": "112300",
+	"perAcre": "705",
+	"assessedValue": "70900",
+	"date": "2016-03-31",
+	"seller": "Sigurd Skarsgard",
+	"buyer": "Levi Schuttle"
 }, {
-	"num": 8,
-	"cellsArray": ["SE-31-50-01-W3", "493", "*", "Arms", "140.68", "150000", "1066", "16000", "2016-01-20", "Junior Holdings Ltd.", "B & B CONSTRUCTION GROUP INC."]
+	"id": "1392",
+	"landLocation": "SE-07-50-02-W3",
+	"rm": "493",
+	"soil": "F",
+	"acres": "159.39",
+	"price": "270000",
+	"perAcre": "1694",
+	"assessedValue": "103400",
+	"date": "2016-03-18",
+	"seller": "Lorne & Patty Miller",
+	"buyer": "TMK TRUCKING LTD."
 }, {
-	"num": 9,
-	"cellsArray": ["SE-31-50-01-W3", "493", "*", "Arms", "140.68", "150000", "1066", "16000", "2016-01-20", "RUSON HOLDINGS LTD.", "B & B CONSTRUCTION GROUP INC."]
+	"id": "1391",
+	"landLocation": "SW-22-50-03-W3",
+	"rm": "493",
+	"soil": "E",
+	"acres": "159.32",
+	"price": "336000",
+	"perAcre": "2109",
+	"assessedValue": "115700",
+	"date": "2016-02-10",
+	"seller": "Robert & Helen Kasner",
+	"buyer": "R. KASNER TRUCKING LTD."
 }, {
-	"num": 10,
-	"cellsArray": ["SE-34-52-03-W3", "493", "K", "Arms", "159.58", "146300", "917", "60300", "2016-03-31", "Sigurd Skarsgard", "Levi Schuttle"]
+	"id": "1390",
+	"landLocation": "SW-07-51-02-W3",
+	"rm": "493",
+	"soil": "E",
+	"acres": "160.81",
+	"price": "212500",
+	"perAcre": "1321",
+	"assessedValue": "96600",
+	"date": "2016-02-09",
+	"seller": "Harley & Linda & Blaine Henry",
+	"buyer": "James & Lorraine Henderson"
 }, {
-	"num": 11,
-	"cellsArray": ["SW-28-52-03-W3", "493", "H", "Arms", "158.23", "131575", "832", "80600", "2016-03-31", "Sigurd Skarsgard", "Leslie & Diana Schutte"]
+	"id": "1387",
+	"landLocation": "NE-09-52-02-W3",
+	"rm": "493",
+	"soil": "G",
+	"acres": "159.59",
+	"price": "150000",
+	"perAcre": "940",
+	"assessedValue": "77800",
+	"date": "2016-01-21",
+	"seller": "Adeline Strube",
+	"buyer": "Dean & Shannon Curran"
 }, {
-	"num": 12,
-	"cellsArray": ["SW-19-52-02-W3", "493", "H", "Arms", "159.76", "130000", "814", "74900", "2016-01-20", "Deborah Schmalz", "Allan & Sally Fitch"]
+	"id": "1388",
+	"landLocation": "NW-09-52-02-W3",
+	"rm": "493",
+	"soil": "G",
+	"acres": "159.44",
+	"price": "150000",
+	"perAcre": "941",
+	"assessedValue": "81900",
+	"date": "2016-01-21",
+	"seller": "Adeline Strube",
+	"buyer": "Dean & Shannon Curran"
 }, {
-	"num": 13,
-	"cellsArray": ["NW-28-52-03-W3", "493", "H", "Arms", "159.54", "119000", "746", "68200", "2016-03-31", "Sigurd Skarsgard", "Leslie & Diana Schutte"]
+	"id": "1389",
+	"landLocation": "SE-29-51-01-W3",
+	"rm": "493",
+	"soil": "D",
+	"acres": "132.86",
+	"price": "210000",
+	"perAcre": "1581",
+	"assessedValue": "227900",
+	"date": "2016-01-21",
+	"seller": "Henry & Karen Gale",
+	"buyer": "Vince Amyotte"
 }, {
-	"num": 14,
-	"cellsArray": ["SW-35-52-03-W3", "493", "J", "Arms", "159.22", "112300", "705", "70900", "2016-03-31", "Sigurd Skarsgard", "Levi Schuttle"]
+	"id": "1384",
+	"landLocation": "SE-31-50-01-W3",
+	"rm": "493",
+	"soil": "*",
+	"acres": "140.68",
+	"price": "150000",
+	"perAcre": "1066",
+	"assessedValue": "16000",
+	"date": "2016-01-20",
+	"seller": "Junior Holdings Ltd.",
+	"buyer": "B & B CONSTRUCTION GROUP INC."
 }, {
-	"num": 15,
-	"cellsArray": ["SE-25-50-02-W3", "493", "H", "Arms", "157.39", "92500", "588", "65700", "2016-05-04", "Nisse Nostbakken et al", "GARY & CATHERINE GALE"]
+	"id": "1385",
+	"landLocation": "SE-31-50-01-W3",
+	"rm": "493",
+	"soil": "*",
+	"acres": "140.68",
+	"price": "150000",
+	"perAcre": "1066",
+	"assessedValue": "16000",
+	"date": "2016-01-20",
+	"seller": "RUSON HOLDINGS LTD.",
+	"buyer": "B & B CONSTRUCTION GROUP INC."
 }, {
-	"num": 16,
-	"cellsArray": ["NE-03-48-03-W3", "493", "M", "Arms", "159.36", "75000", "471", "29000", "2016-01-05", "Leander Schmalz", "Grant Thiel"]
+	"id": "1386",
+	"landLocation": "SW-19-52-02-W3",
+	"rm": "493",
+	"soil": "H",
+	"acres": "159.76",
+	"price": "130000",
+	"perAcre": "814",
+	"assessedValue": "74900",
+	"date": "2016-01-20",
+	"seller": "Deborah Schmalz",
+	"buyer": "Allan & Sally Fitch"
 }, {
-	"num": 17,
-	"cellsArray": ["SE-10-48-03-W3", "493", "M", "Arms", "161.12", "75000", "465", "27400", "2016-01-05", "Leander Schmalz", "Grant Thiel"]
+	"id": "1380",
+	"landLocation": "NE-03-48-03-W3",
+	"rm": "493",
+	"soil": "M",
+	"acres": "159.36",
+	"price": "75000",
+	"perAcre": "471",
+	"assessedValue": "29000",
+	"date": "2016-01-05",
+	"seller": "Leander Schmalz",
+	"buyer": "Grant Thiel"
 }, {
-	"num": 18,
-	"cellsArray": ["SW-10-48-03-W3", "493", "M", "Arms", "161.27", "75000", "465", "29300", "2016-01-05", "Leander Schmalz", "Grant Thiel"]
+	"id": "1381",
+	"landLocation": "SE-10-48-03-W3",
+	"rm": "493",
+	"soil": "M",
+	"acres": "161.12",
+	"price": "75000",
+	"perAcre": "465",
+	"assessedValue": "27400",
+	"date": "2016-01-05",
+	"seller": "Leander Schmalz",
+	"buyer": "Grant Thiel"
 }, {
-	"num": 19,
-	"cellsArray": ["NE-10-48-03-W3", "493", "M", "Arms", "161.11", "75000", "466", "26000", "2016-01-05", "Leander Schmalz", "Grant Thiel"]
+	"id": "1382",
+	"landLocation": "SW-10-48-03-W3",
+	"rm": "493",
+	"soil": "M",
+	"acres": "161.27",
+	"price": "75000",
+	"perAcre": "465",
+	"assessedValue": "29300",
+	"date": "2016-01-05",
+	"seller": "Leander Schmalz",
+	"buyer": "Grant Thiel"
 }, {
-	"num": 20,
-	"cellsArray": ["NW-26-52-03-W3", "493", "K", "Arms", "158.58", "61200", "386", "46100", "2016-03-31", "Sigurd Skarsgard", "Levi Schuttle"]
+	"id": "1383",
+	"landLocation": "NE-10-48-03-W3",
+	"rm": "493",
+	"soil": "M",
+	"acres": "161.11",
+	"price": "75000",
+	"perAcre": "466",
+	"assessedValue": "26000",
+	"date": "2016-01-05",
+	"seller": "Leander Schmalz",
+	"buyer": "Grant Thiel"
 }, {
-	"num": 21,
-	"cellsArray": ["NW-27-49-03-W3", "493", "K", "Arms", "35.17", "5000", "142", "", "2016-04-25", "Donna Latham", "Lorien Brown et al"]
+	"id": "1379",
+	"landLocation": "SW-29-50-01-W3",
+	"rm": "493",
+	"soil": "G",
+	"acres": "159.2",
+	"price": "250000",
+	"perAcre": "1570",
+	"assessedValue": "91000",
+	"date": "2015-12-30",
+	"seller": "Larry Marshall & Meryl Wood",
+	"buyer": "MARSHALL FARMS INC."
+}, {
+	"id": "1378",
+	"landLocation": "SW-12-51-02-W3",
+	"rm": "493",
+	"soil": "E",
+	"acres": "161.31",
+	"price": "250000",
+	"perAcre": "1550",
+	"assessedValue": "101500",
+	"date": "2015-11-27",
+	"seller": "Maureen Pepper",
+	"buyer": "KEVIN BRUCE"
+}, {
+	"id": "1377",
+	"landLocation": "SW-25-51-03-W3",
+	"rm": "493",
+	"soil": "H",
+	"acres": "157.15",
+	"price": "142500",
+	"perAcre": "907",
+	"assessedValue": "115400",
+	"date": "2015-11-09",
+	"seller": "DENNIS CADIEU",
+	"buyer": "101172824 Saskatchewan Ltd."
+}, {
+	"id": "1376",
+	"landLocation": "NE-08-51-02-W3",
+	"rm": "493",
+	"soil": "E",
+	"acres": "160.53",
+	"price": "180000",
+	"perAcre": "1121",
+	"assessedValue": "100400",
+	"date": "2015-09-24",
+	"seller": "GERALD & YVONNE ERNST",
+	"buyer": "101172824 SASKATCHEWAN LTD."
 }]
