@@ -16735,7 +16735,7 @@
     pattern: /^(?:\/(?=$))?$/i,
     keys: [],
     page: './pages/home',
-    data: { "transactions": "GET /initialTransactionSet-1.json" },
+    data: { "transactions": "GET /initialTransactionSet.json" },
     load: function load() {
       return _promise2.default.resolve(__webpack_require__(434).default);
     }
