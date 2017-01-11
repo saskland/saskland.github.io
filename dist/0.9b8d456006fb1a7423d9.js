@@ -37,11 +37,11 @@ webpackJsonp([0],{
   
   var _Layout2 = _interopRequireDefault(_Layout);
   
-  var _styles = __webpack_require__(770);
+  var _styles = __webpack_require__(772);
   
   var _styles2 = _interopRequireDefault(_styles);
   
-  var _index = __webpack_require__(779);
+  var _index = __webpack_require__(781);
   
   var _TransactionsTable = __webpack_require__(330);
   
@@ -59,7 +59,7 @@ webpackJsonp([0],{
   
   var _TransactionToPropertyMapper2 = _interopRequireDefault(_TransactionToPropertyMapper);
   
-  var _reactMdl = __webpack_require__(26);
+  var _reactMdl = __webpack_require__(29);
   
   function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
   
@@ -178,11 +178,11 @@ webpackJsonp([0],{
   
   var _Layout2 = _interopRequireDefault(_Layout);
   
-  var _styles = __webpack_require__(771);
+  var _styles = __webpack_require__(773);
   
   var _styles2 = _interopRequireDefault(_styles);
   
-  var _index = __webpack_require__(780);
+  var _index = __webpack_require__(782);
   
   var _RmTile = __webpack_require__(320);
   
@@ -325,7 +325,7 @@ webpackJsonp([0],{
   
   var _react2 = _interopRequireDefault(_react);
   
-  var _reactMdl = __webpack_require__(26);
+  var _reactMdl = __webpack_require__(29);
   
   function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
   
@@ -387,17 +387,17 @@ webpackJsonp([0],{
   
   var _react2 = _interopRequireDefault(_react);
   
-  var _RmRepository = __webpack_require__(776);
+  var _RmRepository = __webpack_require__(778);
   
   var _RmRepository2 = _interopRequireDefault(_RmRepository);
   
-  var _reactMdl = __webpack_require__(26);
+  var _reactMdl = __webpack_require__(29);
   
   var _Detail = __webpack_require__(319);
   
   var _Detail2 = _interopRequireDefault(_Detail);
   
-  var _rmTileStyles = __webpack_require__(761);
+  var _rmTileStyles = __webpack_require__(762);
   
   var _rmTileStyles2 = _interopRequireDefault(_rmTileStyles);
   
@@ -537,7 +537,7 @@ webpackJsonp([0],{
   
   var _TransactionsRepository2 = _interopRequireDefault(_TransactionsRepository);
   
-  var _reactMdl = __webpack_require__(26);
+  var _reactMdl = __webpack_require__(29);
   
   function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
   
@@ -607,9 +607,6 @@ webpackJsonp([0],{
 /***/ },
 
 /***/ 322:
-319,
-
-/***/ 323:
 /***/ function(module, exports, __webpack_require__) {
 
   'use strict';
@@ -622,13 +619,61 @@ webpackJsonp([0],{
   
   var _react2 = _interopRequireDefault(_react);
   
-  var _reactMdl = __webpack_require__(26);
+  var _detailListItem = __webpack_require__(763);
   
-  var _Detail = __webpack_require__(322);
+  var _detailListItem2 = _interopRequireDefault(_detailListItem);
   
-  var _Detail2 = _interopRequireDefault(_Detail);
+  function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
   
-  var _tile = __webpack_require__(762);
+  /**
+   * React Static Boilerplate
+   * https://github.com/kriasoft/react-static-boilerplate
+   *
+   * Copyright © 2015-present Kriasoft, LLC. All rights reserved.
+   *
+   * This source code is licensed under the MIT license found in the
+   * LICENSE.txt file in the root directory of this source tree.
+   */
+  
+  function DetailListItem(props) {
+    return _react2.default.createElement(
+      'li',
+      { className: _detailListItem2.default.detailListItem },
+      _react2.default.createElement(
+        'strong',
+        null,
+        props.label,
+        ':'
+      ),
+      ' ',
+      props.value
+    );
+  }
+  
+  exports.default = DetailListItem;
+
+/***/ },
+
+/***/ 323:
+/***/ function(module, exports, __webpack_require__) {
+
+  'use strict';
+  
+  Object.defineProperty(exports, "__esModule", {
+      value: true
+  });
+  
+  var _react = __webpack_require__(2);
+  
+  var _react2 = _interopRequireDefault(_react);
+  
+  var _reactMdl = __webpack_require__(29);
+  
+  var _DetailListItem = __webpack_require__(322);
+  
+  var _DetailListItem2 = _interopRequireDefault(_DetailListItem);
+  
+  var _tile = __webpack_require__(764);
   
   var _tile2 = _interopRequireDefault(_tile);
   
@@ -645,53 +690,45 @@ webpackJsonp([0],{
    */
   
   function Tile(props) {
-    return _react2.default.createElement(
-      _reactMdl.Card,
-      { shadow: 0, className: _tile2.default.card },
-      _react2.default.createElement(
-        _reactMdl.CardTitle,
-        { className: _tile2.default.cardTitle },
-        props.property.landLocation,
-        ' - RM ',
-        props.property.rm
-      ),
-      _react2.default.createElement(
-        _reactMdl.CardText,
-        null,
-        _react2.default.createElement(
-          _reactMdl.Grid,
-          null,
+      return _react2.default.createElement(
+          _reactMdl.Card,
+          { shadow: 0, className: _tile2.default.card },
           _react2.default.createElement(
-            _reactMdl.Cell,
-            { col: 3 },
-            _react2.default.createElement(_Detail2.default, {
-              icon: 'monetization_on',
-              label: 'Possible owner',
-              value: props.property.owner
-            }),
-            _react2.default.createElement(_Detail2.default, {
-              icon: 'monetization_on',
-              label: 'Last sold for',
-              value: props.property.lastPrice
-            }),
-            _react2.default.createElement(_Detail2.default, {
-              icon: 'monetization_on',
-              label: 'Last sold on',
-              value: props.property.lastSold
-            })
+              _reactMdl.CardTitle,
+              { className: _tile2.default.cardTitle },
+              props.property.landLocation,
+              ' - RM ',
+              props.property.rm
           ),
           _react2.default.createElement(
-            _reactMdl.Cell,
-            { col: 3 },
-            _react2.default.createElement(_Detail2.default, {
-              icon: 'monetization_on',
-              label: '# of Acres',
-              value: props.property.acres
-            })
+              _reactMdl.CardText,
+              null,
+              _react2.default.createElement(
+                  'ul',
+                  { className: _tile2.default.detailList },
+                  _react2.default.createElement(_DetailListItem2.default, {
+                      icon: 'monetization_on',
+                      label: 'Possible owner',
+                      value: props.property.owner
+                  }),
+                  _react2.default.createElement(_DetailListItem2.default, {
+                      icon: 'monetization_on',
+                      label: '# of Acres',
+                      value: props.property.acres
+                  }),
+                  _react2.default.createElement(_DetailListItem2.default, {
+                      icon: 'monetization_on',
+                      label: 'Last sold for',
+                      value: props.property.lastPrice
+                  }),
+                  _react2.default.createElement(_DetailListItem2.default, {
+                      icon: 'monetization_on',
+                      label: 'Last sold on',
+                      value: props.property.lastSold
+                  })
+              )
           )
-        )
-      )
-    );
+      );
   };
   
   exports.default = Tile;
@@ -699,7 +736,7 @@ webpackJsonp([0],{
 /***/ },
 
 /***/ 328:
-[781, 765],
+[783, 767],
 
 /***/ 329:
 325,
@@ -749,7 +786,7 @@ webpackJsonp([0],{
   
   var _DetailsModal2 = _interopRequireDefault(_DetailsModal);
   
-  var _reactMdl = __webpack_require__(26);
+  var _reactMdl = __webpack_require__(29);
   
   var _reactResponsive = __webpack_require__(299);
   
@@ -759,7 +796,7 @@ webpackJsonp([0],{
   
   var _lodash2 = _interopRequireDefault(_lodash);
   
-  var _transactionsTable = __webpack_require__(766);
+  var _transactionsTable = __webpack_require__(768);
   
   var _transactionsTable2 = _interopRequireDefault(_transactionsTable);
   
@@ -807,24 +844,6 @@ webpackJsonp([0],{
           {
             name: name,
             tooltip: '' },
-          label
-        );
-      }
-    }, {
-      key: '_renderMoneyCell',
-      value: function _renderMoneyCell(name, label) {
-        var formatter = new Intl.NumberFormat('en-US', {
-          minimumFractionDigits: 2
-        });
-  
-        return _react2.default.createElement(
-          _reactMdl.TableHeader,
-          {
-            name: name,
-            tooltip: '',
-            cellFormatter: function cellFormatter(value) {
-              return '$' + formatter.format(value);
-            } },
           label
         );
       }
@@ -879,7 +898,7 @@ webpackJsonp([0],{
                 rows: this.props.transactions
               },
               this._renderCell("landLocation", "Land Location"),
-              this._renderMoneyCell("price", "Price"),
+              this._renderCell("price", "Price"),
               this._renderDetailsCell("id")
             )
           ),
@@ -894,7 +913,7 @@ webpackJsonp([0],{
                 rows: this.props.transactions
               },
               this._renderCell("landLocation", "Land Location"),
-              this._renderMoneyCell("price", "Price"),
+              this._renderCell("price", "Price"),
               this._renderCell("date", "Date"),
               this._renderDetailsCell("id")
             )
@@ -910,7 +929,7 @@ webpackJsonp([0],{
                 rows: this.props.transactions
               },
               this._renderCell("landLocation", "Land Location"),
-              this._renderMoneyCell("price", "Price"),
+              this._renderCell("price", "Price"),
               this._renderCell("date", "Date"),
               this._renderCell("soil", "Soil"),
               this._renderCell("acres", "Acres"),
@@ -928,7 +947,7 @@ webpackJsonp([0],{
                 rows: this.props.transactions
               },
               this._renderCell("landLocation", "Land Location"),
-              this._renderMoneyCell("price", "Price"),
+              this._renderCell("price", "Price"),
               this._renderCell("date", "Date"),
               this._renderCell("soil", "Soil"),
               this._renderCell("acres", "Acres"),
@@ -950,7 +969,7 @@ webpackJsonp([0],{
 /***/ 583:
 /***/ function(module, exports, __webpack_require__) {
 
-  exports = module.exports = __webpack_require__(18)();
+  exports = module.exports = __webpack_require__(16)();
   // imports
   
   
@@ -968,25 +987,43 @@ webpackJsonp([0],{
 /***/ 584:
 /***/ function(module, exports, __webpack_require__) {
 
-  exports = module.exports = __webpack_require__(18)();
+  exports = module.exports = __webpack_require__(16)();
   // imports
   
   
   // module
-  exports.push([module.id, "._1sSG{width:100%;margin:auto}._3TTw{color:#fff;height:55px;background:#3e4eb8}", ""]);
+  exports.push([module.id, "", ""]);
   
   // exports
   exports.locals = {
-  	"card": "_1sSG",
-  	"cardTitle": "_3TTw"
+  	"detailListItem": "bNJK"
   };
 
 /***/ },
 
-/***/ 587:
+/***/ 585:
 /***/ function(module, exports, __webpack_require__) {
 
-  exports = module.exports = __webpack_require__(18)();
+  exports = module.exports = __webpack_require__(16)();
+  // imports
+  
+  
+  // module
+  exports.push([module.id, "._1sSG{width:100%;margin:auto}._3TTw{color:#fff;height:55px;background:#3e4eb8}._3nTp{list-style:none;color:#000}", ""]);
+  
+  // exports
+  exports.locals = {
+  	"card": "_1sSG",
+  	"cardTitle": "_3TTw",
+  	"detailList": "_3nTp"
+  };
+
+/***/ },
+
+/***/ 588:
+/***/ function(module, exports, __webpack_require__) {
+
+  exports = module.exports = __webpack_require__(16)();
   // imports
   
   
@@ -1000,10 +1037,10 @@ webpackJsonp([0],{
 
 /***/ },
 
-/***/ 588:
+/***/ 589:
 /***/ function(module, exports, __webpack_require__) {
 
-  exports = module.exports = __webpack_require__(18)();
+  exports = module.exports = __webpack_require__(16)();
   // imports
   
   
@@ -1017,10 +1054,10 @@ webpackJsonp([0],{
 
 /***/ },
 
-/***/ 592:
+/***/ 593:
 /***/ function(module, exports, __webpack_require__) {
 
-  exports = module.exports = __webpack_require__(18)();
+  exports = module.exports = __webpack_require__(16)();
   // imports
   
   
@@ -1034,10 +1071,10 @@ webpackJsonp([0],{
 
 /***/ },
 
-/***/ 593:
+/***/ 594:
 /***/ function(module, exports, __webpack_require__) {
 
-  exports = module.exports = __webpack_require__(18)();
+  exports = module.exports = __webpack_require__(16)();
   // imports
   
   
@@ -1051,7 +1088,7 @@ webpackJsonp([0],{
 
 /***/ },
 
-/***/ 761:
+/***/ 762:
 /***/ function(module, exports, __webpack_require__) {
 
   // style-loader: Adds some css to the DOM by adding a <style> tag
@@ -1060,7 +1097,7 @@ webpackJsonp([0],{
   var content = __webpack_require__(583);
   if(typeof content === 'string') content = [[module.id, content, '']];
   // add the styles to the DOM
-  var update = __webpack_require__(19)(content, {});
+  var update = __webpack_require__(17)(content, {});
   if(content.locals) module.exports = content.locals;
   // Hot Module Replacement
   if(false) {
@@ -1078,7 +1115,7 @@ webpackJsonp([0],{
 
 /***/ },
 
-/***/ 762:
+/***/ 763:
 /***/ function(module, exports, __webpack_require__) {
 
   // style-loader: Adds some css to the DOM by adding a <style> tag
@@ -1087,7 +1124,34 @@ webpackJsonp([0],{
   var content = __webpack_require__(584);
   if(typeof content === 'string') content = [[module.id, content, '']];
   // add the styles to the DOM
-  var update = __webpack_require__(19)(content, {});
+  var update = __webpack_require__(17)(content, {});
+  if(content.locals) module.exports = content.locals;
+  // Hot Module Replacement
+  if(false) {
+  	// When the styles change, update the <style> tags
+  	if(!content.locals) {
+  		module.hot.accept("!!./../../../node_modules/css-loader/index.js?{\"sourceMap\":false,\"modules\":true,\"localIdentName\":\"[hash:base64:4]\",\"minimize\":true}!./../../../node_modules/postcss-loader/index.js!./detailListItem.css", function() {
+  			var newContent = require("!!./../../../node_modules/css-loader/index.js?{\"sourceMap\":false,\"modules\":true,\"localIdentName\":\"[hash:base64:4]\",\"minimize\":true}!./../../../node_modules/postcss-loader/index.js!./detailListItem.css");
+  			if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+  			update(newContent);
+  		});
+  	}
+  	// When the module is disposed, remove the <style> tags
+  	module.hot.dispose(function() { update(); });
+  }
+
+/***/ },
+
+/***/ 764:
+/***/ function(module, exports, __webpack_require__) {
+
+  // style-loader: Adds some css to the DOM by adding a <style> tag
+  
+  // load the styles
+  var content = __webpack_require__(585);
+  if(typeof content === 'string') content = [[module.id, content, '']];
+  // add the styles to the DOM
+  var update = __webpack_require__(17)(content, {});
   if(content.locals) module.exports = content.locals;
   // Hot Module Replacement
   if(false) {
@@ -1105,19 +1169,19 @@ webpackJsonp([0],{
 
 /***/ },
 
-/***/ 765:
-[845, 587],
+/***/ 767:
+[847, 588],
 
-/***/ 766:
+/***/ 768:
 /***/ function(module, exports, __webpack_require__) {
 
   // style-loader: Adds some css to the DOM by adding a <style> tag
   
   // load the styles
-  var content = __webpack_require__(588);
+  var content = __webpack_require__(589);
   if(typeof content === 'string') content = [[module.id, content, '']];
   // add the styles to the DOM
-  var update = __webpack_require__(19)(content, {});
+  var update = __webpack_require__(17)(content, {});
   if(content.locals) module.exports = content.locals;
   // Hot Module Replacement
   if(false) {
@@ -1135,13 +1199,13 @@ webpackJsonp([0],{
 
 /***/ },
 
-/***/ 770:
-[846, 592],
+/***/ 772:
+[848, 593],
 
-/***/ 771:
-[846, 593],
+/***/ 773:
+[848, 594],
 
-/***/ 776:
+/***/ 778:
 /***/ function(module, exports, __webpack_require__) {
 
   const sheetrock = __webpack_require__(309);
@@ -1190,10 +1254,14 @@ webpackJsonp([0],{
 
 /***/ },
 
-/***/ 779:
-778,
+/***/ 781:
+/***/ function(module, exports) {
 
-/***/ 780:
-778
+  module.exports = {"title":"Sask Land Transactions Search","html":""};
+
+/***/ },
+
+/***/ 782:
+781
 
 });
