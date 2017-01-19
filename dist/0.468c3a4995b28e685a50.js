@@ -1,6 +1,6 @@
 webpackJsonp([0],{
 
-/***/ 111:
+/***/ 110:
 /***/ function(module, exports, __webpack_require__) {
 
   'use strict';
@@ -33,78 +33,75 @@ webpackJsonp([0],{
   
   var _react2 = _interopRequireDefault(_react);
   
-  var _Layout = __webpack_require__(93);
+  var _Layout = __webpack_require__(109);
   
   var _Layout2 = _interopRequireDefault(_Layout);
   
-  var _styles = __webpack_require__(773);
+  var _styles = __webpack_require__(770);
   
   var _styles2 = _interopRequireDefault(_styles);
   
-  var _index = __webpack_require__(783);
+  var _index = __webpack_require__(779);
   
-  var _TransactionsTable = __webpack_require__(110);
+  var _TransactionsTable = __webpack_require__(141);
   
   var _TransactionsTable2 = _interopRequireDefault(_TransactionsTable);
   
-  var _TransactionsSearchService = __webpack_require__(209);
+  var _TransactionsSearchService = __webpack_require__(313);
   
   var _TransactionsSearchService2 = _interopRequireDefault(_TransactionsSearchService);
+  
+  var _Tile = __webpack_require__(324);
+  
+  var _Tile2 = _interopRequireDefault(_Tile);
+  
+  var _TransactionToPropertyMapper = __webpack_require__(314);
+  
+  var _TransactionToPropertyMapper2 = _interopRequireDefault(_TransactionToPropertyMapper);
+  
+  var _lodash = __webpack_require__(187);
+  
+  var _lodash2 = _interopRequireDefault(_lodash);
   
   var _TransactionDetails = __webpack_require__(326);
   
   var _TransactionDetails2 = _interopRequireDefault(_TransactionDetails);
   
-  var _TransactionToPropertyMapper = __webpack_require__(210);
+  var _DetailsTile = __webpack_require__(323);
   
-  var _TransactionToPropertyMapper2 = _interopRequireDefault(_TransactionToPropertyMapper);
-  
-  var _reactMdl = __webpack_require__(29);
-  
-  var _lodash = __webpack_require__(130);
-  
-  var _lodash2 = _interopRequireDefault(_lodash);
+  var _DetailsTile2 = _interopRequireDefault(_DetailsTile);
   
   function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
   
-  var TransactionsPage = function (_React$Component) {
-    (0, _inherits3.default)(TransactionsPage, _React$Component);
-    (0, _createClass3.default)(TransactionsPage, [{
+  var PropertiesPage = function (_React$Component) {
+    (0, _inherits3.default)(PropertiesPage, _React$Component);
+    (0, _createClass3.default)(PropertiesPage, [{
       key: 'componentDidMount',
       value: function componentDidMount() {
-        document.title = this.landLocation + " - " + _index.title;
+        document.title = this.state.landLocation + " - " + _index.title;
       }
     }, {
       key: 'componentDidUpdate',
       value: function componentDidUpdate() {
   
-        if (this.saleDate !== this.props.route.params.saleDate) {
+        this.loadDetails();
+      }
+    }, {
+      key: 'loadDetails',
+      value: function loadDetails() {
+  
+        if (this.props.route.params.saleDate) {
           this.loadTransactionDetails();
-        };
+        } else {
+          this.loadPropertyDetails();
+        }
       }
     }, {
       key: 'repositoryCallback',
       value: function repositoryCallback(transactions) {
   
-        this.setState({
-          transactions: transactions
-        });
-  
-        this.loadTransactionDetails();
-      }
-    }, {
-      key: 'loadTransactionDetails',
-      value: function loadTransactionDetails() {
-  
-        this.saleDate = this.props.route.params.saleDate;
-        var saleDate = this.saleDate;
-        var transactionDetails = _lodash2.default.find(this.state.transactions, function (x) {
-          return x.date === saleDate;
-        });
-  
-        this.setState({
-          transactionDetails: transactionDetails
-        });
+        this.setState({ transactions: transactions });
+        this.loadDetails();
       }
     }, {
       key: '_renderPage',
@@ -114,228 +111,72 @@ webpackJsonp([0],{
             'div',
             null,
             _react2.default.createElement(_TransactionDetails2.default, { transactionDetails: this.state.transactionDetails }),
+            _react2.default.createElement(
+              'h4',
+              null,
+              'Transactions for this property'
+            ),
             _react2.default.createElement(_TransactionsTable2.default, { transactions: this.state.transactions })
           );
-        } else {
-          return _react2.default.createElement(_reactMdl.Spinner, null);
-        };
-      }
-    }]);
-  
-    function TransactionsPage(props) {
-      (0, _classCallCheck3.default)(this, TransactionsPage);
-  
-      var _this = (0, _possibleConstructorReturn3.default)(this, (TransactionsPage.__proto__ || (0, _getPrototypeOf2.default)(TransactionsPage)).call(this, props));
-  
-      _this.repositoryCallback = _this.repositoryCallback.bind(_this);
-      _this.state = { transactions: [], property: null };
-  
-      _this.landLocation = _this.props.route.params.landLocation;
-      _this.saleDate = _this.props.route.params.saleDate;
-      _this.transactionsService = new _TransactionsSearchService2.default();
-  
-      _this.transactionsService.searchTransactions(_this.landLocation, _this.repositoryCallback);
-      return _this;
-    }
-  
-    (0, _createClass3.default)(TransactionsPage, [{
-      key: 'render',
-      value: function render() {
-        return _react2.default.createElement(
-          _Layout2.default,
-          { className: _styles2.default.content },
-          this._renderPage(),
-          _react2.default.createElement(
-            'p',
-            null,
-            _react2.default.createElement('br', null),
-            _react2.default.createElement('br', null)
-          )
-        );
-      }
-    }]);
-    return TransactionsPage;
-  }(_react2.default.Component);
-  
-  exports.default = TransactionsPage;
-
-/***/ },
-
-/***/ 210:
-/***/ function(module, exports) {
-
-  module.exports = class TransactionToPropertyMapper {
-  
-  	mapToProperty(transaction) {
-  
-  		var property = {};
-  
-  		if (transaction) {
-  			property.rm = transaction.rm;
-  			property.landLocation = transaction.landLocation;
-  			property.acres = transaction.acres;
-  			property.owner = transaction.buyer;
-  			property.lastSold = transaction.date;
-  			property.lastPrice = transaction.price;
-  		};
-  
-  		return property;
-  	};
-  };
-
-
-/***/ },
-
-/***/ 212:
-/***/ function(module, exports, __webpack_require__) {
-
-  'use strict';
-  
-  Object.defineProperty(exports, "__esModule", {
-    value: true
-  });
-  
-  var _react = __webpack_require__(2);
-  
-  var _react2 = _interopRequireDefault(_react);
-  
-  var _detailListItem = __webpack_require__(764);
-  
-  var _detailListItem2 = _interopRequireDefault(_detailListItem);
-  
-  function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-  
-  /**
-   * React Static Boilerplate
-   * https://github.com/kriasoft/react-static-boilerplate
-   *
-   * Copyright © 2015-present Kriasoft, LLC. All rights reserved.
-   *
-   * This source code is licensed under the MIT license found in the
-   * LICENSE.txt file in the root directory of this source tree.
-   */
-  
-  function DetailListItem(props) {
-    return _react2.default.createElement(
-      'li',
-      { className: _detailListItem2.default.detailListItem },
-      _react2.default.createElement(
-        'strong',
-        null,
-        props.label,
-        ':'
-      ),
-      ' ',
-      props.value
-    );
-  }
-  
-  exports.default = DetailListItem;
-
-/***/ },
-
-/***/ 214:
-/***/ function(module, exports, __webpack_require__) {
-
-  'use strict';
-  
-  Object.defineProperty(exports, "__esModule", {
-    value: true
-  });
-  
-  var _getPrototypeOf = __webpack_require__(21);
-  
-  var _getPrototypeOf2 = _interopRequireDefault(_getPrototypeOf);
-  
-  var _classCallCheck2 = __webpack_require__(22);
-  
-  var _classCallCheck3 = _interopRequireDefault(_classCallCheck2);
-  
-  var _possibleConstructorReturn2 = __webpack_require__(25);
-  
-  var _possibleConstructorReturn3 = _interopRequireDefault(_possibleConstructorReturn2);
-  
-  var _createClass2 = __webpack_require__(23);
-  
-  var _createClass3 = _interopRequireDefault(_createClass2);
-  
-  var _inherits2 = __webpack_require__(24);
-  
-  var _inherits3 = _interopRequireDefault(_inherits2);
-  
-  var _react = __webpack_require__(2);
-  
-  var _react2 = _interopRequireDefault(_react);
-  
-  var _Layout = __webpack_require__(93);
-  
-  var _Layout2 = _interopRequireDefault(_Layout);
-  
-  var _styles = __webpack_require__(771);
-  
-  var _styles2 = _interopRequireDefault(_styles);
-  
-  var _index = __webpack_require__(781);
-  
-  var _TransactionsTable = __webpack_require__(110);
-  
-  var _TransactionsTable2 = _interopRequireDefault(_TransactionsTable);
-  
-  var _TransactionsSearchService = __webpack_require__(209);
-  
-  var _TransactionsSearchService2 = _interopRequireDefault(_TransactionsSearchService);
-  
-  var _Property = __webpack_require__(320);
-  
-  var _Property2 = _interopRequireDefault(_Property);
-  
-  var _TransactionToPropertyMapper = __webpack_require__(210);
-  
-  var _TransactionToPropertyMapper2 = _interopRequireDefault(_TransactionToPropertyMapper);
-  
-  var _reactMdl = __webpack_require__(29);
-  
-  var _lodash = __webpack_require__(130);
-  
-  var _lodash2 = _interopRequireDefault(_lodash);
-  
-  function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-  
-  var PropertiesPage = function (_React$Component) {
-    (0, _inherits3.default)(PropertiesPage, _React$Component);
-    (0, _createClass3.default)(PropertiesPage, [{
-      key: 'componentDidMount',
-      value: function componentDidMount() {
-        document.title = this.landLocation + " - " + _index.title;
-      }
-    }, {
-      key: 'repositoryCallback',
-      value: function repositoryCallback(transactions) {
-  
-        var mapper = new _TransactionToPropertyMapper2.default();
-        var property = mapper.mapToProperty(transactions[0]);
-  
-        var saleDate = this.props.route.params.saleDate;
-  
-        console.log(_lodash2.default.find(transactions, function (x) {
-          return x.date === saleDate;
-        }));
-  
-        this.setState({ transactions: transactions, property: property });
-      }
-    }, {
-      key: '_renderPage',
-      value: function _renderPage() {
-        if (this.state.property) {
+        } else if (this.state.property) {
           return _react2.default.createElement(
             'div',
             null,
-            _react2.default.createElement(_Property2.default, { property: this.state.property }),
+            _react2.default.createElement(_Tile2.default, { property: this.state.property }),
+            _react2.default.createElement(
+              'h4',
+              null,
+              'Transactions for this property'
+            ),
             _react2.default.createElement(_TransactionsTable2.default, { transactions: this.state.transactions })
           );
         } else {
-          return _react2.default.createElement(_reactMdl.Spinner, null);
+          return _react2.default.createElement(
+            'div',
+            null,
+            _react2.default.createElement(_DetailsTile2.default, { rm: this.state.rm, landLocation: this.state.landLocation }),
+            _react2.default.createElement(
+              'h4',
+              null,
+              'Transactions for this property'
+            ),
+            _react2.default.createElement(_TransactionsTable2.default, { transactions: this.state.transactions })
+          );
         };
+      }
+    }, {
+      key: 'loadPropertyDetails',
+      value: function loadPropertyDetails() {
+  
+        if (this.state.transactionDetails) {
+          this.setState({
+            transactionDetails: null
+          });
+        }
+  
+        if (!this.state.property) {
+          var mapper = new _TransactionToPropertyMapper2.default();
+          var property = mapper.mapToProperty(this.state.transactions[0]);
+          this.setState({
+            property: property
+          });
+        }
+      }
+    }, {
+      key: 'loadTransactionDetails',
+      value: function loadTransactionDetails() {
+  
+        if (this.saleDate !== this.props.route.params.saleDate) {
+          this.saleDate = this.props.route.params.saleDate;
+          var saleDate = this.saleDate;
+          var transactionDetails = _lodash2.default.find(this.state.transactions, function (x) {
+            return x.date === saleDate;
+          });
+  
+          this.setState({
+            transactionDetails: transactionDetails
+          });
+        }
       }
     }]);
   
@@ -345,12 +186,21 @@ webpackJsonp([0],{
       var _this = (0, _possibleConstructorReturn3.default)(this, (PropertiesPage.__proto__ || (0, _getPrototypeOf2.default)(PropertiesPage)).call(this, props));
   
       _this.repositoryCallback = _this.repositoryCallback.bind(_this);
-      _this.state = { transactions: [], property: null };
   
-      _this.landLocation = _this.props.route.params.landLocation;
+      var rm = _this.props.route.params.rm;
+      var landLocation = _this.props.route.params.landLocation;
+  
+      _this.state = {
+        rm: rm,
+        landLocation: landLocation,
+        transactions: null,
+        property: null,
+        transactionDetails: null
+      };
+  
       _this.transactionsService = new _TransactionsSearchService2.default();
   
-      _this.transactionsService.searchTransactions(_this.landLocation, _this.repositoryCallback);
+      _this.transactionsService.searchTransactions(_this.state.landLocation, _this.repositoryCallback);
       return _this;
     }
   
@@ -377,7 +227,124 @@ webpackJsonp([0],{
 
 /***/ },
 
-/***/ 215:
+/***/ 137:
+/***/ function(module, exports, __webpack_require__) {
+
+  // style-loader: Adds some css to the DOM by adding a <style> tag
+  
+  // load the styles
+  var content = __webpack_require__(585);
+  if(typeof content === 'string') content = [[module.id, content, '']];
+  // add the styles to the DOM
+  var update = __webpack_require__(19)(content, {});
+  if(content.locals) module.exports = content.locals;
+  // Hot Module Replacement
+  if(false) {
+  	// When the styles change, update the <style> tags
+  	if(!content.locals) {
+  		module.hot.accept("!!./../../../node_modules/css-loader/index.js?{\"sourceMap\":false,\"modules\":true,\"localIdentName\":\"[hash:base64:4]\",\"minimize\":true}!./../../../node_modules/postcss-loader/index.js!./tile.css", function() {
+  			var newContent = require("!!./../../../node_modules/css-loader/index.js?{\"sourceMap\":false,\"modules\":true,\"localIdentName\":\"[hash:base64:4]\",\"minimize\":true}!./../../../node_modules/postcss-loader/index.js!./tile.css");
+  			if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+  			update(newContent);
+  		});
+  	}
+  	// When the module is disposed, remove the <style> tags
+  	module.hot.dispose(function() { update(); });
+  }
+
+/***/ },
+
+/***/ 139:
+/***/ function(module, exports, __webpack_require__) {
+
+  'use strict';
+  
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+  
+  var _react = __webpack_require__(2);
+  
+  var _react2 = _interopRequireDefault(_react);
+  
+  var _detailListItem = __webpack_require__(763);
+  
+  var _detailListItem2 = _interopRequireDefault(_detailListItem);
+  
+  function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+  
+  function DetailListItem(props) {
+    return _react2.default.createElement(
+      'li',
+      { className: _detailListItem2.default.listItem },
+      _react2.default.createElement(
+        'div',
+        { className: _detailListItem2.default.label },
+        props.label,
+        ':'
+      ),
+      _react2.default.createElement(
+        'div',
+        { className: _detailListItem2.default.value },
+        props.value
+      )
+    );
+  }
+  
+  exports.default = DetailListItem;
+
+/***/ },
+
+/***/ 140:
+/***/ function(module, exports, __webpack_require__) {
+
+  'use strict';
+  
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+  
+  var _react = __webpack_require__(2);
+  
+  var _react2 = _interopRequireDefault(_react);
+  
+  var _Link = __webpack_require__(62);
+  
+  var _Link2 = _interopRequireDefault(_Link);
+  
+  var _reactMdl = __webpack_require__(29);
+  
+  var _tile = __webpack_require__(137);
+  
+  var _tile2 = _interopRequireDefault(_tile);
+  
+  function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+  
+  function Header(props) {
+    var landLink = "/" + props.rm + "/" + props.landLocation;
+    var rmLink = "/" + props.rm;
+    return _react2.default.createElement(
+      _reactMdl.CardTitle,
+      { className: _tile2.default.cardTitle },
+      _react2.default.createElement(
+        _Link2.default,
+        { to: landLink },
+        props.landLocation
+      ),
+      _react2.default.createElement(
+        _Link2.default,
+        { to: rmLink },
+        'RM ',
+        props.rm
+      )
+    );
+  };
+  
+  exports.default = Header;
+
+/***/ },
+
+/***/ 214:
 /***/ function(module, exports, __webpack_require__) {
 
   'use strict';
@@ -410,21 +377,21 @@ webpackJsonp([0],{
   
   var _react2 = _interopRequireDefault(_react);
   
-  var _Layout = __webpack_require__(93);
+  var _Layout = __webpack_require__(109);
   
   var _Layout2 = _interopRequireDefault(_Layout);
   
-  var _styles = __webpack_require__(772);
+  var _styles = __webpack_require__(771);
   
   var _styles2 = _interopRequireDefault(_styles);
   
-  var _index = __webpack_require__(782);
+  var _index = __webpack_require__(780);
   
-  var _RmTile = __webpack_require__(322);
+  var _RmTile = __webpack_require__(321);
   
   var _RmTile2 = _interopRequireDefault(_RmTile);
   
-  var _RmTransactions = __webpack_require__(323);
+  var _RmTransactions = __webpack_require__(322);
   
   var _RmTransactions2 = _interopRequireDefault(_RmTransactions);
   
@@ -482,75 +449,32 @@ webpackJsonp([0],{
 
 /***/ },
 
-/***/ 313:
-/***/ function(module, exports, __webpack_require__) {
+/***/ 314:
+/***/ function(module, exports) {
 
-  // style-loader: Adds some css to the DOM by adding a <style> tag
+  module.exports = class TransactionToPropertyMapper {
   
-  // load the styles
-  var content = __webpack_require__(585);
-  if(typeof content === 'string') content = [[module.id, content, '']];
-  // add the styles to the DOM
-  var update = __webpack_require__(17)(content, {});
-  if(content.locals) module.exports = content.locals;
-  // Hot Module Replacement
-  if(false) {
-  	// When the styles change, update the <style> tags
-  	if(!content.locals) {
-  		module.hot.accept("!!./../../../node_modules/css-loader/index.js?{\"sourceMap\":false,\"modules\":true,\"localIdentName\":\"[hash:base64:4]\",\"minimize\":true}!./../../../node_modules/postcss-loader/index.js!./tile.css", function() {
-  			var newContent = require("!!./../../../node_modules/css-loader/index.js?{\"sourceMap\":false,\"modules\":true,\"localIdentName\":\"[hash:base64:4]\",\"minimize\":true}!./../../../node_modules/postcss-loader/index.js!./tile.css");
-  			if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
-  			update(newContent);
-  		});
-  	}
-  	// When the module is disposed, remove the <style> tags
-  	module.hot.dispose(function() { update(); });
-  }
+  	mapToProperty(transaction) {
+  
+  		var property = {};
+  
+  		if (transaction) {
+  			property.rm = transaction.rm;
+  			property.landLocation = transaction.landLocation;
+  			property.acres = transaction.acres;
+  			property.owner = transaction.buyer;
+  			property.lastSold = transaction.date;
+  			property.lastPrice = transaction.price;
+  		};
+  
+  		return property;
+  	};
+  };
+
 
 /***/ },
 
 /***/ 320:
-/***/ function(module, exports, __webpack_require__) {
-
-  'use strict';
-  
-  Object.defineProperty(exports, "__esModule", {
-    value: true
-  });
-  
-  var _react = __webpack_require__(2);
-  
-  var _react2 = _interopRequireDefault(_react);
-  
-  var _Tile = __webpack_require__(324);
-  
-  var _Tile2 = _interopRequireDefault(_Tile);
-  
-  function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-  
-  /**
-   * React Static Boilerplate
-   * https://github.com/kriasoft/react-static-boilerplate
-   *
-   * Copyright © 2015-present Kriasoft, LLC. All rights reserved.
-   *
-   * This source code is licensed under the MIT license found in the
-   * LICENSE.txt file in the root directory of this source tree.
-   */
-  
-  function Property(props) {
-    return _react2.default.createElement(
-      'div',
-      null,
-      _react2.default.createElement(_Tile2.default, { property: props.property })
-    );
-  }
-  
-  exports.default = Property;
-
-/***/ },
-
-/***/ 321:
 /***/ function(module, exports, __webpack_require__) {
 
   'use strict';
@@ -592,7 +516,7 @@ webpackJsonp([0],{
 
 /***/ },
 
-/***/ 322:
+/***/ 321:
 /***/ function(module, exports, __webpack_require__) {
 
   'use strict';
@@ -625,17 +549,17 @@ webpackJsonp([0],{
   
   var _react2 = _interopRequireDefault(_react);
   
-  var _RmRepository = __webpack_require__(778);
+  var _RmRepository = __webpack_require__(776);
   
   var _RmRepository2 = _interopRequireDefault(_RmRepository);
   
   var _reactMdl = __webpack_require__(29);
   
-  var _Detail = __webpack_require__(321);
+  var _Detail = __webpack_require__(320);
   
   var _Detail2 = _interopRequireDefault(_Detail);
   
-  var _rmTileStyles = __webpack_require__(763);
+  var _rmTileStyles = __webpack_require__(762);
   
   var _rmTileStyles2 = _interopRequireDefault(_rmTileStyles);
   
@@ -734,7 +658,7 @@ webpackJsonp([0],{
 
 /***/ },
 
-/***/ 323:
+/***/ 322:
 /***/ function(module, exports, __webpack_require__) {
 
   'use strict';
@@ -767,11 +691,11 @@ webpackJsonp([0],{
   
   var _react2 = _interopRequireDefault(_react);
   
-  var _TransactionsTable = __webpack_require__(110);
+  var _TransactionsTable = __webpack_require__(141);
   
   var _TransactionsTable2 = _interopRequireDefault(_TransactionsTable);
   
-  var _TransactionsRepository = __webpack_require__(314);
+  var _TransactionsRepository = __webpack_require__(312);
   
   var _TransactionsRepository2 = _interopRequireDefault(_TransactionsRepository);
   
@@ -844,6 +768,56 @@ webpackJsonp([0],{
 
 /***/ },
 
+/***/ 323:
+/***/ function(module, exports, __webpack_require__) {
+
+  'use strict';
+  
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+  
+  var _react = __webpack_require__(2);
+  
+  var _react2 = _interopRequireDefault(_react);
+  
+  var _Link = __webpack_require__(62);
+  
+  var _Link2 = _interopRequireDefault(_Link);
+  
+  var _reactMdl = __webpack_require__(29);
+  
+  var _DetailListItem = __webpack_require__(139);
+  
+  var _DetailListItem2 = _interopRequireDefault(_DetailListItem);
+  
+  var _Header = __webpack_require__(140);
+  
+  var _Header2 = _interopRequireDefault(_Header);
+  
+  var _tile = __webpack_require__(137);
+  
+  var _tile2 = _interopRequireDefault(_tile);
+  
+  function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+  
+  function DetailsTile(props) {
+    return _react2.default.createElement(
+      _reactMdl.Card,
+      { shadow: 0, className: _tile2.default.card },
+      _react2.default.createElement(_Header2.default, { rm: props.rm, landLocation: props.landLocation }),
+      _react2.default.createElement(
+        _reactMdl.CardText,
+        null,
+        _react2.default.createElement(_reactMdl.Spinner, null)
+      )
+    );
+  };
+  
+  exports.default = DetailsTile;
+
+/***/ },
+
 /***/ 324:
 /***/ function(module, exports, __webpack_require__) {
 
@@ -859,40 +833,33 @@ webpackJsonp([0],{
   
   var _reactMdl = __webpack_require__(29);
   
-  var _DetailListItem = __webpack_require__(212);
+  var _DetailListItem = __webpack_require__(139);
   
   var _DetailListItem2 = _interopRequireDefault(_DetailListItem);
   
-  var _tile = __webpack_require__(313);
+  var _Header = __webpack_require__(140);
+  
+  var _Header2 = _interopRequireDefault(_Header);
+  
+  var _tile = __webpack_require__(137);
   
   var _tile2 = _interopRequireDefault(_tile);
   
   function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
   
-  /**
-   * React Static Boilerplate
-   * https://github.com/kriasoft/react-static-boilerplate
-   *
-   * Copyright © 2015-present Kriasoft, LLC. All rights reserved.
-   *
-   * This source code is licensed under the MIT license found in the
-   * LICENSE.txt file in the root directory of this source tree.
-   */
-  
   function Tile(props) {
       return _react2.default.createElement(
           _reactMdl.Card,
           { shadow: 0, className: _tile2.default.card },
-          _react2.default.createElement(
-              _reactMdl.CardTitle,
-              { className: _tile2.default.cardTitle },
-              props.property.landLocation,
-              ' - RM ',
-              props.property.rm
-          ),
+          _react2.default.createElement(_Header2.default, { rm: props.property.rm, landLocation: props.property.landLocation }),
           _react2.default.createElement(
               _reactMdl.CardText,
               null,
+              _react2.default.createElement(
+                  'h4',
+                  null,
+                  'Current Property Information'
+              ),
               _react2.default.createElement(
                   'ul',
                   { className: _tile2.default.detailList },
@@ -938,17 +905,21 @@ webpackJsonp([0],{
   
   var _react2 = _interopRequireDefault(_react);
   
-  var _Link = __webpack_require__(94);
+  var _Link = __webpack_require__(62);
   
   var _Link2 = _interopRequireDefault(_Link);
   
   var _reactMdl = __webpack_require__(29);
   
-  var _DetailListItem = __webpack_require__(212);
+  var _DetailListItem = __webpack_require__(139);
   
   var _DetailListItem2 = _interopRequireDefault(_DetailListItem);
   
-  var _tile = __webpack_require__(313);
+  var _Header = __webpack_require__(140);
+  
+  var _Header2 = _interopRequireDefault(_Header);
+  
+  var _tile = __webpack_require__(137);
   
   var _tile2 = _interopRequireDefault(_tile);
   
@@ -958,53 +929,66 @@ webpackJsonp([0],{
       return _react2.default.createElement(
           _reactMdl.Card,
           { shadow: 0, className: _tile2.default.card },
-          _react2.default.createElement(
-              _reactMdl.CardTitle,
-              { className: _tile2.default.cardTitle },
-              props.transactionDetails.landLocation,
-              ' - RM ',
-              props.transactionDetails.rm
-          ),
+          _react2.default.createElement(_Header2.default, { rm: props.transactionDetails.rm, landLocation: props.transactionDetails.landLocation }),
           _react2.default.createElement(
               _reactMdl.CardText,
               null,
               _react2.default.createElement(
-                  'ul',
-                  { className: _tile2.default.detailList },
-                  _react2.default.createElement(_DetailListItem2.default, {
-                      icon: 'monetization_on',
-                      label: '# of Acres',
-                      value: props.transactionDetails.acres
-                  }),
-                  _react2.default.createElement(_DetailListItem2.default, {
-                      icon: 'monetization_on',
-                      label: 'Assessed Value',
-                      value: props.transactionDetails.assessedValue
-                  }),
-                  _react2.default.createElement(_DetailListItem2.default, {
-                      icon: 'monetization_on',
-                      label: 'Buyer',
-                      value: props.transactionDetails.buyer
-                  }),
-                  _react2.default.createElement(_DetailListItem2.default, {
-                      icon: 'monetization_on',
-                      label: 'Seller',
-                      value: props.transactionDetails.seller
-                  })
+                  'h4',
+                  null,
+                  'Transaction Information'
+              ),
+              _react2.default.createElement(
+                  _reactMdl.Grid,
+                  null,
+                  _react2.default.createElement(
+                      _reactMdl.Cell,
+                      { col: 4 },
+                      _react2.default.createElement(
+                          'ul',
+                          { className: _tile2.default.detailList },
+                          _react2.default.createElement(_DetailListItem2.default, {
+                              label: 'Transaction Date',
+                              value: props.transactionDetails.date
+                          }),
+                          _react2.default.createElement(_DetailListItem2.default, {
+                              label: 'Price',
+                              value: props.transactionDetails.price
+                          }),
+                          _react2.default.createElement(_DetailListItem2.default, {
+                              label: '# of Acres',
+                              value: props.transactionDetails.acres
+                          }),
+                          _react2.default.createElement(_DetailListItem2.default, {
+                              label: 'Price/Acre',
+                              value: props.transactionDetails.perAcre
+                          })
+                      )
+                  ),
+                  _react2.default.createElement(
+                      _reactMdl.Cell,
+                      { col: 8 },
+                      _react2.default.createElement(
+                          'ul',
+                          { className: _tile2.default.detailList },
+                          _react2.default.createElement(_DetailListItem2.default, {
+                              label: 'Assessed Value',
+                              value: props.transactionDetails.assessedValue
+                          }),
+                          _react2.default.createElement(_DetailListItem2.default, {
+                              label: 'Buyer',
+                              value: props.transactionDetails.buyer
+                          }),
+                          _react2.default.createElement(_DetailListItem2.default, {
+                              label: 'Seller',
+                              value: props.transactionDetails.seller
+                          })
+                      )
+                  )
               )
           )
       );
-  } /**
-     * React Static Boilerplate
-     * https://github.com/kriasoft/react-static-boilerplate
-     *
-     * Copyright © 2015-present Kriasoft, LLC. All rights reserved.
-     *
-     * This source code is licensed under the MIT license found in the
-     * LICENSE.txt file in the root directory of this source tree.
-     */
-  
-  ;
+  };
   
   exports.default = TransactionTile;
 
@@ -1054,7 +1038,7 @@ webpackJsonp([0],{
 /***/ 583:
 /***/ function(module, exports, __webpack_require__) {
 
-  exports = module.exports = __webpack_require__(16)();
+  exports = module.exports = __webpack_require__(18)();
   // imports
   
   
@@ -1072,16 +1056,18 @@ webpackJsonp([0],{
 /***/ 584:
 /***/ function(module, exports, __webpack_require__) {
 
-  exports = module.exports = __webpack_require__(16)();
+  exports = module.exports = __webpack_require__(18)();
   // imports
   
   
   // module
-  exports.push([module.id, "", ""]);
+  exports.push([module.id, "._1uZQ{width:100%;height:25px;clear:both}._2JUT{font-weight:700;width:125px;text-align:right;padding-right:15px}._1IUQ,._2JUT{float:left}", ""]);
   
   // exports
   exports.locals = {
-  	"detailListItem": "bNJK"
+  	"listItem": "_1uZQ",
+  	"label": "_2JUT",
+  	"value": "_1IUQ"
   };
 
 /***/ },
@@ -1089,12 +1075,12 @@ webpackJsonp([0],{
 /***/ 585:
 /***/ function(module, exports, __webpack_require__) {
 
-  exports = module.exports = __webpack_require__(16)();
+  exports = module.exports = __webpack_require__(18)();
   // imports
   
   
   // module
-  exports.push([module.id, "._1sSG{width:100%;margin:auto}._3TTw{color:#fff;height:55px;background:#3e4eb8}._3nTp{list-style:none;color:#000}", ""]);
+  exports.push([module.id, "._1sSG{width:100%;margin:auto}._3TTw{color:#fff;height:55px;background:#3e4eb8}._3TTw a{color:#fff;text-decoration:none;float:right}._3TTw a:last-child{position:absolute;right:25px}._3TTw a:hover{text-decoration:underline}._3nTp{list-style:none;color:#000}", ""]);
   
   // exports
   exports.locals = {
@@ -1108,7 +1094,7 @@ webpackJsonp([0],{
 /***/ 592:
 /***/ function(module, exports, __webpack_require__) {
 
-  exports = module.exports = __webpack_require__(16)();
+  exports = module.exports = __webpack_require__(18)();
   // imports
   
   
@@ -1125,7 +1111,7 @@ webpackJsonp([0],{
 /***/ 593:
 /***/ function(module, exports, __webpack_require__) {
 
-  exports = module.exports = __webpack_require__(16)();
+  exports = module.exports = __webpack_require__(18)();
   // imports
   
   
@@ -1139,24 +1125,7 @@ webpackJsonp([0],{
 
 /***/ },
 
-/***/ 594:
-/***/ function(module, exports, __webpack_require__) {
-
-  exports = module.exports = __webpack_require__(16)();
-  // imports
-  
-  
-  // module
-  exports.push([module.id, "@media screen and (max-width:1024px){._1ZBp{padding:0 16px}}", ""]);
-  
-  // exports
-  exports.locals = {
-  	"content": "_1ZBp"
-  };
-
-/***/ },
-
-/***/ 763:
+/***/ 762:
 /***/ function(module, exports, __webpack_require__) {
 
   // style-loader: Adds some css to the DOM by adding a <style> tag
@@ -1165,7 +1134,7 @@ webpackJsonp([0],{
   var content = __webpack_require__(583);
   if(typeof content === 'string') content = [[module.id, content, '']];
   // add the styles to the DOM
-  var update = __webpack_require__(17)(content, {});
+  var update = __webpack_require__(19)(content, {});
   if(content.locals) module.exports = content.locals;
   // Hot Module Replacement
   if(false) {
@@ -1183,7 +1152,7 @@ webpackJsonp([0],{
 
 /***/ },
 
-/***/ 764:
+/***/ 763:
 /***/ function(module, exports, __webpack_require__) {
 
   // style-loader: Adds some css to the DOM by adding a <style> tag
@@ -1192,7 +1161,7 @@ webpackJsonp([0],{
   var content = __webpack_require__(584);
   if(typeof content === 'string') content = [[module.id, content, '']];
   // add the styles to the DOM
-  var update = __webpack_require__(17)(content, {});
+  var update = __webpack_require__(19)(content, {});
   if(content.locals) module.exports = content.locals;
   // Hot Module Replacement
   if(false) {
@@ -1210,19 +1179,16 @@ webpackJsonp([0],{
 
 /***/ },
 
+/***/ 770:
+[844, 592],
+
 /***/ 771:
-[847, 592],
+[844, 593],
 
-/***/ 772:
-[847, 593],
-
-/***/ 773:
-[847, 594],
-
-/***/ 778:
+/***/ 776:
 /***/ function(module, exports, __webpack_require__) {
 
-  const sheetrock = __webpack_require__(312);
+  const sheetrock = __webpack_require__(311);
   
   module.exports = class RmRepository {
   
@@ -1268,17 +1234,14 @@ webpackJsonp([0],{
 
 /***/ },
 
-/***/ 781:
+/***/ 779:
 /***/ function(module, exports) {
 
   module.exports = {"title":"Sask Land Transactions Search","html":""};
 
 /***/ },
 
-/***/ 782:
-781,
-
-/***/ 783:
-781
+/***/ 780:
+779
 
 });
