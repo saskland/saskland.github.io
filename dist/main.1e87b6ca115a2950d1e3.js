@@ -7068,7 +7068,7 @@
             ),
             _react2.default.createElement(
               _reactResponsive2.default,
-              { minWidth: 900, maxWidth: 1099 },
+              { minWidth: 900 },
               _react2.default.createElement(
                 _reactMdl.DataTable,
                 {
@@ -7082,27 +7082,6 @@
                 this._renderCell("date", "Date"),
                 this._renderCell("soil", "Soil"),
                 this._renderCell("acres", "Acres"),
-                this._renderCell("buyer", "Buyer"),
-                this._renderDetailsCell("id")
-              )
-            ),
-            _react2.default.createElement(
-              _reactResponsive2.default,
-              { minWidth: 1100 },
-              _react2.default.createElement(
-                _reactMdl.DataTable,
-                {
-                  sortable: true,
-                  shadow: 0,
-                  rows: this.props.transactions,
-                  className: _transactionsTable2.default.table
-                },
-                this._renderLandLocationCell("landLocation", "Land Location"),
-                this._renderCell("price", "Price"),
-                this._renderCell("date", "Date"),
-                this._renderCell("soil", "Soil"),
-                this._renderCell("acres", "Acres"),
-                this._renderCell("seller", "Seller"),
                 this._renderCell("buyer", "Buyer"),
                 this._renderDetailsCell("id")
               )
