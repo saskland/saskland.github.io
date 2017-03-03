@@ -688,6 +688,16 @@ webpackJsonp([0],{
   
   function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
   
+  function rmLogo(rmId) {
+    if (rmId == 491) {
+      return _react2.default.createElement(
+        'div',
+        null,
+        _react2.default.createElement('img', { src: 'https://www.dropbox.com/s/yxmmjlc6fkgdob3/logo.png?dl=1' })
+      );
+    }
+  }
+  
   function rmDownloads(rmId) {
     if (rmId == 491) {
       return _react2.default.createElement(
@@ -781,6 +791,11 @@ webpackJsonp([0],{
             _reactMdl.Cell,
             { col: 5 },
             rmDownloads(props.rm.id)
+          ),
+          _react2.default.createElement(
+            _reactMdl.Cell,
+            { col: 2 },
+            rmLogo(props.rm.id)
           )
         )
       )
